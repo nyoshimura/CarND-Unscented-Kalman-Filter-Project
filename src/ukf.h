@@ -67,6 +67,9 @@ public:
   ///* Sigma point spreading parameter
   double lambda_;
 
+  // NIS
+  double NIS_laser_;
+  double NIS_radar_;
 
   /**
    * Constructor
@@ -102,6 +105,7 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
+  void NormalizeAngle(double& phi);
 };
 
 #endif /* UKF_H */
